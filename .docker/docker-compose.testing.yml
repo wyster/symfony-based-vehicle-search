@@ -1,0 +1,10 @@
+version: "3"
+services:
+  web:
+    container_name: ${PROJECT_NAME}_web_testing
+    env_file:
+      - ".env.testing"
+  php:
+    container_name: ${PROJECT_NAME}_php_testing
+    env_file:
+      - ".env.testing"
