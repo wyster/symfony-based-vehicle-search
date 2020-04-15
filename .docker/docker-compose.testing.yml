@@ -8,3 +8,9 @@ services:
     container_name: ${PROJECT_NAME}_php_testing
     env_file:
       - ".env.testing"
+  mysql:
+    container_name: ${PROJECT_NAME}_mysql_testing
+    volumes:
+      - "./data/testing/mysql:/var/lib/mysql"
+    env_file:
+      - ".env.testing"

@@ -1,5 +1,9 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-    <h1>{{message}}
+    <ul>
+    {% for vehicleType in vehicleTypes %}
+        <li><a href="/makes/{{ vehicleType.code }}">{{ vehicleType.description }}</a></li>
+    {% endfor %}
+    </ul
 {% endblock %}
