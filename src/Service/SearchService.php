@@ -35,7 +35,7 @@ final class SearchService implements SearchServiceInterface
         return $results;
     }
 
-    private function createLog(Make $make, VehicleType $type, int $resultCount, StopwatchEvent $stopwatchEvent): void
+    private function createLog(Make $make, VehicleType $type, int $resultsCount, StopwatchEvent $stopwatchEvent): void
     {
         $ip = '';
         $userAgent = '';
@@ -46,7 +46,7 @@ final class SearchService implements SearchServiceInterface
 
         $log = new SearchLog();
         $log->setIpAddress($ip);
-        $log->setFoundModels($resultCount);
+        $log->setFoundModels($resultsCount);
         $log->setUserAgent($userAgent);
         $log->setMakeAbbr($make->getCode());
         $log->setVehicleType($type->getCode());

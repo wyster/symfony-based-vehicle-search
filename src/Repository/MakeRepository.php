@@ -17,6 +17,8 @@ class MakeRepository extends ServiceEntityRepository
     }
 
     /**
+     * @param int $id
+     * @return Make
      * @throws RowNotFoundException
      */
     public function findById(int $id): Make
