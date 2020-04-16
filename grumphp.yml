@@ -41,7 +41,7 @@ parameters:
           - test
       - scopes: []
     phpstan:
-      ignore_patterns: [src/Migrations, c3.php]
+      ignore_patterns: [src/Migrations, c3.php, .phpstorm.meta.php]
     phplint: ~
     phpversion:
       project: '7.4'
