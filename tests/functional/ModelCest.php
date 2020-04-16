@@ -16,4 +16,18 @@ class ModelCest
         $content = $I->grabPageSource();
         $I->assertStringContainsString('[{"id":1,"description":"LESABRE"}]', $content);
     }
+
+    public function tryToTestEmptyModel(FunctionalTester $I): void
+    {
+        $I->haveInDatabase('vehicle_type', ['id' => 1, 'description' => 'Automobile', 'code' => 'V']);
+        $I->haveInDatabase('make', ['id' => 2, 'type_id' => 1, 'code' => 'BUIC', 'description' => 'Buic']);
+        $I->sendAjaxGetRequest('/models/1/2');
+        $I->canSeeResponseCodeIs(404);
+    }
+
+    public function tryToTestNotFound(FunctionalTester $I): void
+    {
+        $I->sendAjaxGetRequest('/models/1/1');
+        $I->canSeeResponseCodeIs(404);
+    }
 }
