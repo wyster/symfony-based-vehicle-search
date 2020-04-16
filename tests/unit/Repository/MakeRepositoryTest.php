@@ -25,7 +25,7 @@ class MakeRepositoryTest extends Unit
     public function testFindByCodeAndTypeNotFoundException(): void
     {
         $this->expectException(RowNotFoundException::class);
-        $this->tester->grabService(MakeRepository::class)->findByCodeAndType(1, 1);
+        $this->tester->grabService(MakeRepository::class)->findByCodeAndType('V', 1);
     }
 
     public function testFindByCodeAndType(): void

@@ -33,6 +33,7 @@ class ModelTest extends Unit
         $model->setType($vehicleType);
         $model->setMake($make);
         $model->setDescription('RIVIERA');
+        $em->persist($model);
 
         $em->flush();
 
